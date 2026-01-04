@@ -1,0 +1,50 @@
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Manrope:wght@400;500;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 228 34% 8%;
+  --foreground: 40 20% 96%;
+  --card: 225 28% 12%;
+  --card-foreground: 40 20% 96%;
+  --popover: 225 28% 12%;
+  --popover-foreground: 40 20% 96%;
+  --primary: 168 70% 42%;
+  --primary-foreground: 228 30% 8%;
+  --secondary: 220 24% 18%;
+  --secondary-foreground: 40 20% 96%;
+  --muted: 220 20% 18%;
+  --muted-foreground: 215 15% 70%;
+  --accent: 28 55% 24%;
+  --accent-foreground: 40 20% 96%;
+  --destructive: 0 68% 50%;
+  --destructive-foreground: 40 20% 96%;
+  --border: 220 20% 22%;
+  --input: 220 20% 22%;
+  --ring: 168 70% 42%;
+  --radius: 1rem;
+  color-scheme: dark;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    min-height: 100vh;
+    background-image:
+      radial-gradient(circle at 8% 10%, rgba(45, 212, 191, 0.18), transparent 45%),
+      radial-gradient(circle at 92% 20%, rgba(248, 113, 113, 0.14), transparent 45%),
+      radial-gradient(circle at 60% 80%, rgba(251, 191, 36, 0.12), transparent 50%),
+      linear-gradient(140deg, rgba(6, 9, 20, 0.98), rgba(15, 23, 42, 0.95));
+  }
+}
+
+@layer components {
+  .glass-panel {
+    @apply bg-card/75 backdrop-blur border border-border/70 shadow-lg;
+  }
+}
