@@ -1,4 +1,4 @@
-# Loteria del Nino - Radar de Probabilidad
+# Loteria - Radar de Probabilidad
 
 SPA en React + TypeScript para evaluar numeros de 5 cifras segun la suma (22/23), el centro interno por varianza y un filtro historico opcional. Incluye generador de 5 numeros y favoritos persistidos en localStorage.
 
@@ -9,6 +9,7 @@ SPA en React + TypeScript para evaluar numeros de 5 cifras segun la suma (22/23)
 - Favoritos en ruta separada (`/favoritos`) y persistencia local
 - Modal explicativo con graficos y enlaces
 - UI dark mode con animaciones
+- Configuracion del historico desde JSON
 
 ## Stack
 
@@ -45,6 +46,16 @@ bun run test
 ```bash
 bun run build
 ```
+
+## Configurar historico
+
+Edita `src/data/historical-numbers.json` con entradas de este formato:
+
+```json
+{ "number": "01234", "year": 2024, "prize": 2000000 }
+```
+
+El filtro historico recalcula los sesgos por posicion segun la muestra.
 
 ## Docker
 

@@ -15,7 +15,7 @@ export function NumberInput({ value, onChange, useHistory, onToggleHistory }: Nu
   return (
     <div className="space-y-6">
       <div className="space-y-3">
-        <Label htmlFor="lottery-number">Tu numero de 5 cifras</Label>
+        <Label htmlFor="lottery-number">Tu número de 5 cifras</Label>
         <Input
           id="lottery-number"
           value={value}
@@ -48,10 +48,10 @@ export function NumberInput({ value, onChange, useHistory, onToggleHistory }: Nu
         />
         <div className="space-y-1">
           <Label htmlFor="history" className="text-sm">
-            Considerar sesgos historicos por posicion
+            Considerar sesgos históricos por posición
           </Label>
           <p className="text-xs text-muted-foreground">
-            Anade un filtro extra basado en el comportamiento de sorteos pasados.
+            Añade un filtro extra basado en el comportamiento de sorteos pasados.
           </p>
         </div>
       </div>

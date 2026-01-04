@@ -1,3 +1,5 @@
+import { getHistoryCheck, type HistoryCheck } from "@/lib/historical";
+
 export type SuitabilityStatus = "rojo" | "amarillo" | "verde";
 
 export type PremiseKey = "suma" | "centro" | "historico";
@@ -9,12 +11,8 @@ export interface PremiseResult {
   detail: string;
 }
 
-export interface HistoryCheck {
-  matches: number;
-  total: number;
-  matchedPositions: number[];
-  isIdeal: boolean;
-}
+export type { HistoryCheck } from "@/lib/historical";
+export { getHistoryCheck };
 
 export interface SuitabilityResult {
   status: SuitabilityStatus;
@@ -38,42 +36,6 @@ export interface GeneratedNumber {
   satisfiedCount: number;
   totalPremises: number;
 }
-
-const REQUIRED_HISTORY_MATCHES = 2;
-
-export const HISTORICAL_BIASES = [
-  {
-    position: 0,
-    label: "Decena de millar",
-    favorites: [0, 1, 2, 3, 4],
-    note: "Los numeros bajos dominan el historico."
-  },
-  {
-    position: 3,
-    label: "Decenas",
-    favorites: [2],
-    note: "La terminacion 20 se repite con frecuencia."
-  },
-  {
-    position: 4,
-    label: "Unidades",
-    favorites: [0, 7, 9, 4],
-    note: "El 0 lidera, 7/9/4 destacan."
-  }
-] as const;
-
-export const HISTORICAL_NEUTRALS = [
-  {
-    position: 1,
-    label: "Unidades de millar",
-    note: "Sin sesgo claro en el historico."
-  },
-  {
-    position: 2,
-    label: "Centenas",
-    note: "Sin sesgo claro en el historico."
-  }
-] as const;
 
 const IDEAL_SUMS = new Set([22, 23]);
 let cachedCentralThreshold: number | null = null;
@@ -129,24 +91,6 @@ export const isCentralNumber = (digits: number[]) => {
   return varianceFromDigits(digits) <= threshold;
 };
 
-export const getHistoryCheck = (digits: number[]): HistoryCheck => {
-  const matchedPositions: number[] = [];
-  HISTORICAL_BIASES.forEach((bias) => {
-    if (bias.favorites.includes(digits[bias.position])) {
-      matchedPositions.push(bias.position);
-    }
-  });
-
-  const matches = matchedPositions.length;
-  const total = HISTORICAL_BIASES.length;
-  return {
-    matches,
-    total,
-    matchedPositions,
-    isIdeal: matches >= REQUIRED_HISTORY_MATCHES
-  };
-};
-
 const statusMessageMap: Record<SuitabilityStatus, string> = {
   verde: "Perfecto: cumple todas las premisas activas.",
   amarillo: "Interesante: cumple parte de las premisas.",
@@ -187,9 +131,13 @@ export const evaluateNumber = (
   if (options.useHistory && history) {
     premises.push({
       key: "historico",
-      label: "Sesgo historico",
+      label: "Sesgo histórico",
       satisfied: history.isIdeal,
-      detail: `${history.matches}/${history.total} posiciones con sesgo`
+      detail: history.hasData
+        ? history.total
+          ? `${history.matches}/${history.total} posiciones con sesgo`
+          : "Sin sesgos claros en la muestra"
+        : "Sin datos históricos configurados"
     });
   }
 

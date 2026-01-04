@@ -36,9 +36,9 @@ export function ResultCard({
     return (
       <Card className="glass-panel animate-fade-up">
         <CardHeader>
-          <CardTitle className="font-display text-xl">Tu radar aun espera</CardTitle>
+          <CardTitle className="font-display text-xl">Tu radar aún espera</CardTitle>
           <p className="text-sm text-muted-foreground">
-            Escribe un numero de cinco cifras para activar el analisis.
+            Escribe un número de cinco cifras para activar el análisis.
           </p>
         </CardHeader>
       </Card>

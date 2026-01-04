@@ -12,13 +12,13 @@ export function FavoritesPanel({ favorites, onRemove }: FavoritesPanelProps) {
       <CardHeader>
         <CardTitle className="font-display text-xl">Tus favoritos</CardTitle>
         <p className="text-sm text-muted-foreground">
-          Numeros guardados para comparar o compartir.
+          Números guardados para comparar o compartir.
         </p>
       </CardHeader>
       <CardContent className="space-y-3">
         {favorites.length === 0 ? (
           <div className="rounded-lg border border-dashed border-border/70 p-6 text-center text-sm text-muted-foreground">
-            Todavia no hay favoritos. Guarda alguno desde el analisis o el generador.
+            Todavía no hay favoritos. Guarda alguno desde el análisis o el generador.
           </div>
         ) : (
           favorites.map((value) => (

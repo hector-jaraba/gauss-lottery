@@ -4,7 +4,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import type { GeneratedNumber, SuitabilityStatus } from "@/lib/lottery";
 
 const statusBadge: Record<SuitabilityStatus, { label: string; variant: "success" | "warning" | "danger" }> = {
-  verde: { label: "Optimo", variant: "success" },
+  verde: { label: "Óptimo", variant: "success" },
   amarillo: { label: "Parcial", variant: "warning" },
   rojo: { label: "Bajo", variant: "danger" }
 };
@@ -27,7 +27,7 @@ export function GeneratorPanel({
   return (
     <Card className="glass-panel animate-fade-up">
       <CardHeader className="space-y-3">
-        <CardTitle className="font-display text-xl">Generador de cinco numeros</CardTitle>
+        <CardTitle className="font-display text-xl">Generador de cinco números</CardTitle>
         <p className="text-sm text-muted-foreground">
           Muestra cinco candidatos con el mejor puntaje dentro de los criterios activos.
         </p>
@@ -40,12 +40,12 @@ export function GeneratorPanel({
           <span>Premisas activas:</span>
           <Badge variant="secondary">Suma 22/23</Badge>
           <Badge variant="secondary">Centro 6.000</Badge>
-          {useHistory ? <Badge variant="secondary">Historico</Badge> : null}
+          {useHistory ? <Badge variant="secondary">Histórico</Badge> : null}
         </div>
         <div className="grid gap-3">
           {generated.length === 0 ? (
             <div className="rounded-lg border border-dashed border-border/70 p-6 text-center text-sm text-muted-foreground">
-              Todavia no hay numeros. Pulsa \"Generar ahora\".
+              Todavía no hay números. Pulsa "Generar ahora".
             </div>
           ) : (
             generated.map((item) => {

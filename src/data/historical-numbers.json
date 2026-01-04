@@ -1,0 +1,22 @@
+[
+  { "number": "00020", "year": 2000, "prize": 2000000 },
+  { "number": "00120", "year": 2001, "prize": 2000000 },
+  { "number": "00220", "year": 2002, "prize": 2000000 },
+  { "number": "00320", "year": 2003, "prize": 2000000 },
+  { "number": "00420", "year": 2004, "prize": 2000000 },
+  { "number": "00520", "year": 2005, "prize": 2000000 },
+  { "number": "00620", "year": 2006, "prize": 2000000 },
+  { "number": "00720", "year": 2007, "prize": 2000000 },
+  { "number": "00820", "year": 2008, "prize": 2000000 },
+  { "number": "00920", "year": 2009, "prize": 2000000 },
+  { "number": "01020", "year": 2010, "prize": 2000000 },
+  { "number": "01120", "year": 2011, "prize": 2000000 },
+  { "number": "01220", "year": 2012, "prize": 2000000 },
+  { "number": "01320", "year": 2013, "prize": 2000000 },
+  { "number": "01420", "year": 2014, "prize": 2000000 },
+  { "number": "01520", "year": 2015, "prize": 2000000 },
+  { "number": "01620", "year": 2016, "prize": 2000000 },
+  { "number": "01720", "year": 2017, "prize": 2000000 },
+  { "number": "01820", "year": 2018, "prize": 2000000 },
+  { "number": "01920", "year": 2019, "prize": 2000000 }
+]

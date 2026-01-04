@@ -25,9 +25,6 @@ export function AppLayout() {
       <main className="container relative z-10 pb-16 pt-8">
         <header className="mb-10 flex flex-wrap items-center justify-between gap-4">
           <div className="space-y-2">
-            <p className="text-sm uppercase tracking-[0.3em] text-muted-foreground">
-              Loteria del Nino
-            </p>
             <nav className="flex items-center gap-4">
               <NavLink
                 to="/"

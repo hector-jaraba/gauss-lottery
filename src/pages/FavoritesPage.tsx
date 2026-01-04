@@ -9,7 +9,7 @@ export function FavoritesPage() {
       <header className="grid gap-3">
         <h1 className="font-display text-3xl font-semibold">Favoritos</h1>
         <p className="text-sm text-muted-foreground">
-          Guarda numeros para revisarlos luego. Se mantienen en este dispositivo.
+          Guarda números para revisarlos luego. Se mantienen en este dispositivo.
         </p>
       </header>
       <FavoritesPanel favorites={favorites} onRemove={removeFavorite} />

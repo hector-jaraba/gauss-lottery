@@ -8,7 +8,7 @@ describe("App", () => {
 
   test("shows evaluation for a valid number", () => {
     render(<App />);
-    const input = screen.getByLabelText(/Tu numero de 5 cifras/i);
+    const input = screen.getByLabelText(/Tu número de 5 cifras/i);
     fireEvent.change(input, { target: { value: "06584" } });
 
     expect(
@@ -27,7 +27,7 @@ describe("App", () => {
 
   test("adds and removes favorites", () => {
     render(<App />);
-    const input = screen.getByLabelText(/Tu numero de 5 cifras/i);
+    const input = screen.getByLabelText(/Tu número de 5 cifras/i);
     fireEvent.change(input, { target: { value: "06584" } });
 
     const saveButton = screen.getByRole("button", { name: /Guardar en favoritos/i });
